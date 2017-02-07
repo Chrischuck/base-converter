@@ -1,4 +1,5 @@
 function converter(number, base, baseTo) {
+  // Checking to make sure each digit does not exceed its base
   for (let i = 0; i < number.length; i++) {
     if (base >= 2 && base <= 9) {
       if ( Number(number.charAt(i)) > base ) {
@@ -8,7 +9,7 @@ function converter(number, base, baseTo) {
       break;
     }
   }
-  // converts from base n to decimal
+  // Converts from base n to decimal
   let decimal = 0
   let power = 0;
   for (let i = number.length - 1; i >= 0; i--) {
@@ -16,7 +17,7 @@ function converter(number, base, baseTo) {
     power++
   }
 
-  // convert decimal to base n
+  // Convert decimal to base n
   let mutatingDecimal = decimal
   let bases = []
   while (mutatingDecimal > 0) {
@@ -32,4 +33,4 @@ function converter(number, base, baseTo) {
   return baseString
 }
 
-console.log(converter('10', 10, 10))
+console.log(converter('1000', 4, 10))
